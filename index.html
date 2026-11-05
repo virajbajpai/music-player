@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brown Vinyl</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div class="app">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="brand">
+
+                <div class="brand-icon">♪</div>
+
+                <div>
+                    <h1>BROWN VINYL</h1>
+                    <span>LOCAL MUSIC PLAYER</span>
+                </div>
+
+            </div>
+
+            <button id="chooseFolder" class="folder-button">
+                📁 Choose Songs
+            </button>
+
+        </header>
+
+
+        <!-- MAIN -->
+        <main class="content">
+
+            <!-- LEFT -->
+            <section class="visual-section">
+
+                <div class="visual-label">
+                    NOW PLAYING
+                </div>
+
+                <!-- GIF -->
+                <div class="gif-container">
+
+                    <img
+                        src="idea.gif"
+                        id="playerGif"
+                        alt="Music animation"
+                    >
+
+                </div>
+
+
+                <!-- VINYL -->
+                <div class="vinyl-area">
+
+                    <div class="vinyl" id="vinyl">
+
+                        <div class="vinyl-lines"></div>
+
+                        <div class="vinyl-label">
+
+                            <span>VINYL</span>
+                            <small>EST. 2026</small>
+
+                        </div>
+
+                        <div class="vinyl-hole"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT -->
+            <section class="music-section">
+
+                <!-- SEARCH -->
+                <div class="search-box">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search songs..."
+                        autocomplete="off"
+                    >
+
+                    <span
+                        id="songCount"
+                        class="song-count"
+                    >
+                        0 songs
+                    </span>
+
+                </div>
+
+
+                <!-- CURRENT SONG -->
+                <div class="current-song">
+
+                    <div class="now-playing-label">
+                        NOW PLAYING
+                    </div>
+
+                    <h2 id="songTitle">
+                        No song selected
+                    </h2>
+
+                    <p id="artistName">
+                        Choose some music to begin
+                    </p>
+
+                </div>
+
+
+                <!-- PROGRESS -->
+                <div class="progress-area">
+
+                    <span id="currentTime">
+                        0:00
+                    </span>
+
+                    <div
+                        class="progress-container"
+                        id="progressContainer"
+                    >
+
+                        <div
+                            class="progress"
+                            id="progress"
+                        ></div>
+
+                    </div>
+
+                    <span id="duration">
+                        0:00
+                    </span>
+
+                </div>
+
+
+                <!-- CONTROLS -->
+                <div class="controls">
+
+                    <button
+                        id="previousButton"
+                        class="control-button"
+                    >
+                        ⏮
+                    </button>
+
+                    <button
+                        id="playButton"
+                        class="play-button"
+                    >
+                        ▶
+                    </button>
+
+                    <button
+                        id="nextButton"
+                        class="control-button"
+                    >
+                        ⏭
+                    </button>
+
+                </div>
+
+
+                <!-- VOLUME -->
+                <div class="volume-area">
+
+                    <span id="volumeIcon">
+                        🔊
+                    </span>
+
+                    <input
+                        type="range"
+                        id="volumeSlider"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="1"
+                    >
+
+                </div>
+
+
+                <!-- PLAYLIST HEADER -->
+                <div class="playlist-header">
+
+                    <span>YOUR MUSIC</span>
+
+                    <span id="playlistStatus">
+                        No songs selected
+                    </span>
+
+                </div>
+
+
+                <!-- PLAYLIST -->
+                <div
+                    class="playlist"
+                    id="playlist"
+                >
+
+                    <div class="empty-message">
+
+                        <div class="empty-icon">
+                            ♪
+                        </div>
+
+                        <p>Add your music</p>
+
+                        <small>
+                            Click "Choose Songs" above
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div class="footer-left">
+                Local playback • Your music • Your interface
+            </div>
+
+            <div class="creator">
+
+                Made by
+
+                <a href="mailto:virajganeshabajpai@gmail.com">
+                    @virajganeshabajpai@gmail.com
+                </a>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- MUSIC FILE SELECTOR -->
+    <input
+        type="file"
+        id="folderInput"
+        accept="audio/*"
+        multiple
+        hidden
+    >
+
+
+    <!-- AUDIO -->
+    <audio id="audio"></audio>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
